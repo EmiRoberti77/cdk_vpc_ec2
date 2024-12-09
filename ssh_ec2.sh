@@ -1,0 +1,1 @@
+ssh -i emi_cdk_vpc_key.pem ec2-user@52.2.164.241
