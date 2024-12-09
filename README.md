@@ -22,8 +22,8 @@ const vpc = new ec2.Vpc(this, process.env.VPC_NAME!, {
 });
 ```
 
-•	CIDR Block: Defines the IP address range for the VPC (e.g., 10.0.0.0/16).
-•	Subnets: The VPC is divided into smaller subnetworks to organize resources. A public subnet allows internet access for instances.
+- CIDR Block: Defines the IP address range for the VPC (e.g., 10.0.0.0/16).
+- Subnets: The VPC is divided into smaller subnetworks to organize resources. A public subnet allows internet access for instances.
 
 ## 2. Subnets: Structuring Your Network
 
@@ -53,8 +53,8 @@ const elasticIp = new ec2.CfnEIP(this, "ElasticIp", {
 });
 ```
 
-•	Elastic IP Allocation: AWS reserves this static IP, which can be assigned to an EC2 instance.
-•	Association with EC2: The EIP is linked to the instance for external communication.
+- Elastic IP Allocation: AWS reserves this static IP, which can be assigned to an EC2 instance.
+- Association with EC2: The EIP is linked to the instance for external communication.
 
 ## 4. Security Groups: Controlling Network Access
 
@@ -68,9 +68,9 @@ securityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(8000), "custom por
 securityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(8080), "custom port for node service");
 ```
 
--	Port 22: Enables SSH for remote access.
--	Ports 80/443: Allow HTTP and HTTPS traffic for web applications.
--	Custom Ports (8000/8080): These are configured for application-specific services.
+- Port 22: Enables SSH for remote access.
+- Ports 80/443: Allow HTTP and HTTPS traffic for web applications.
+- Custom Ports (8000/8080): These are configured for application-specific services.
 
 ## 5. EC2 Instance: The Compute Layer
 
@@ -98,9 +98,10 @@ const instance = new ec2.Instance(this, process.env.EC2_INSTANCE!, {
 ## 6. Bringing It All Together
 
 The CDK stack provisions:
-	1.	A VPC with one public subnet.
-	2.	An EC2 instance within the subnet, accessible via SSH, HTTP, HTTPS, and custom ports (8000, 8080).
-	3.	An Elastic IP, ensuring a consistent public IP for the instance.
+
+- A VPC with one public subnet.
+- An EC2 instance within the subnet, accessible via SSH, HTTP, HTTPS, and custom ports (8000, 8080).
+- An Elastic IP, ensuring a consistent public IP for the instance.
 
 ## 7. Outputs
 
