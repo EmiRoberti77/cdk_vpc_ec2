@@ -114,5 +114,8 @@ new cdk.CfnOutput(this, "InstancePublicIP", {
 
 This stack demonstrates how AWS networking components like VPC, subnets, and Elastic IPs create a robust foundation for running applications on EC2. By configuring the VPC, assigning a static IP, and managing security groups, you gain full control over your application’s network and ensure reliable and scalable deployments.
 
+## AWS network diagram on putting together a web application using VPC, subnets, routing tables and security groups
+
+![VPC-1 - page - 2](https://github.com/user-attachments/assets/09b216b1-1c37-4608-98b5-5122a4662713)
 
 
